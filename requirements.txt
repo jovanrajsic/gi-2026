@@ -1,0 +1,4 @@
+scanpy
+matplotlib
+numpy
+ipykernel
