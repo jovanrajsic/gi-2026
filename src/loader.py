@@ -19,5 +19,6 @@ def load_all_samples():
         adata.var_names_make_unique()
         adatas.append(adata)
     combined_adata = sc.concat(adatas, label='sample_batch', join='outer', index_unique='_')
+    combined_adata.X = combined_adata.X.astype('float32')
     return combined_adata
 

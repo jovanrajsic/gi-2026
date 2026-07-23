@@ -2,3 +2,5 @@ scanpy
 matplotlib
 numpy
 ipykernel
+bbknn
+leidenalg
