@@ -51,7 +51,7 @@ def run_clustering(adata, n_pcs=30):
     )
 
     # Plot it!
-    sc.pl.umap(adata, color=['sample_id', 'leiden'])
+    sc.pl.umap(adata, color=['sample_id', 'leiden', 'pct_counts_mt'], show=False)
     plt.savefig('results/umap.png')
     plt.show()
 

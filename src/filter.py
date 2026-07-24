@@ -26,6 +26,8 @@ def normalize_and_select_genes(adata):
     # don't overwhelm the statistical model.
     sc.pp.log1p(adata)
 
+    adata.layers['norm_log'] = adata.X.copy()
+
     print("Step 4: Identifying Highly Variable Genes (HVGs)...")
     # We identify genes that vary significantly between our 4 samples.
     # We typically pick the top 2000 genes to focus on the 'signal' and ignore 'noise'.
