@@ -32,7 +32,7 @@ def run_pca(adata):
 
     return adata
 
-def run_clustering(adata, n_pcs=30):
+def run_clustering(adata, n_pcs=30, resolution=0.4):
     # batch_key is the column in adata.obs that identifies the 4 samples
     sce.pp.bbknn(adata, batch_key='sample_id', n_pcs=n_pcs)
 
@@ -46,12 +46,12 @@ def run_clustering(adata, n_pcs=30):
     sc.tl.leiden(
         adata,
         key_added="leiden",
-        resolution=0.4, # Larger resolution - more clusters
+        resolution=resolution, # Larger resolution - more clusters
         random_state=0
     )
 
     # Plot it!
-    sc.pl.umap(adata, color=['sample_id', 'leiden', 'pct_counts_mt'], show=False)
+    sc.pl.umap(adata, color=['sample_id', 'leiden', 'pct_counts_mt'], cmap='turbo', show=False)
     plt.savefig('results/umap.png')
     plt.show()
 
