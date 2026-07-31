@@ -10,7 +10,7 @@ def filter_data(adata, min_genes, max_genes, max_mt_pct):
     print(f"Stats AFTER filtering: {adata.n_obs} cells, {adata.n_vars} genes")
     return adata
 
-def normalize_and_select_genes(adata):
+def normalize_and_select_genes(adata, n_top_genes=2500):
     print("Step 1: Saving raw counts...")
     # .raw is a special slot in AnnData. It preserves the original matrix 
     # while we perform math on the main matrix (adata.X).
@@ -31,7 +31,7 @@ def normalize_and_select_genes(adata):
     print("Step 4: Identifying Highly Variable Genes (HVGs)...")
     # We identify genes that vary significantly between our 4 samples.
     # We typically pick the top 2000 genes to focus on the 'signal' and ignore 'noise'.
-    sc.pp.highly_variable_genes(adata, n_top_genes=2000, flavor='seurat', batch_key='sample_id')
+    sc.pp.highly_variable_genes(adata, n_top_genes=n_top_genes, flavor='seurat', batch_key='sample_id')
 
     mt_genes = adata.var_names.str.startswith('MT-')
     ribo_genes = adata.var_names.str.startswith(('RPS', 'RPL'))

@@ -7,3 +7,5 @@ setuptools
 git+https://github.com/Teichlab/bbknn.git
 leidenalg
 panhumanpy
+gseapy
+matplotlib-venn

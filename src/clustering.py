@@ -38,7 +38,7 @@ def run_clustering(adata, n_pcs=30, resolution=0.4):
 
     sc.tl.umap(
         adata, 
-        min_dist=0.4,    # Keep it at 0.4 to handle the 'dropout' noise
+        min_dist=0.1,    # Keep it at 0.4 to handle the 'dropout' noise
         spread=1.0,      # Good for readability
         random_state=0   # For reproducibility
     )
