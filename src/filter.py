@@ -46,7 +46,7 @@ def normalize_and_select_genes(adata, n_top_genes=2500):
     gc.collect()
 
     # Visualizing HVGs for your PowerPoint
-    sc.pl.highly_variable_genes(adata_subset, show=False)
+    sc.pl.highly_variable_genes(adata, show=False)
     plt.savefig('results/highly_variable_genes.png')
     plt.close()
 

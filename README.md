@@ -2,7 +2,7 @@
 
 # Single-Cell Analysis of Immune Response to Nanoplastic Particles
 
-**Course:** Genomic Informatics (2026)
+**Course:** Genomic Informatics (2026), School of Electrical Engineering, University of Belgrade
 
 ## 1. Prerequisites
 - **Python:** version 3.12
@@ -36,3 +36,10 @@ Put files from [Zenodo](https://zenodo.org/records/15866724) in a folder named `
 
 ## 5. Outputs
 Outputs will be in the `results/` directory.
+
+## Video Presentation
+[![Watch the video](https://img.youtube.com/vi/etqQlJw8kg4/0.jpg)](https://www.youtube.com/watch?v=etqQlJw8kg4)
+
+## Disclaimer
+I used Google AI Studio for researching code solutions and biological interpretations of the data.
+I tried using AI agents like Google Antigravity but it worked out a solution of the project without my interference and I felt that I don't own the solution so I abandoned it.
